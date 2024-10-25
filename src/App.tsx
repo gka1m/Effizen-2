@@ -1,11 +1,10 @@
 import "./App.css";
+import Routing from "./Routing";
 
 const App = () => {
   return (
     <div>
-      <section className="h-screen bg-green-400">
-        <p>Hello World</p>
-      </section>
+      <Routing />
     </div>
   );
 };
