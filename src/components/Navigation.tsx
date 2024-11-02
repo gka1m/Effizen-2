@@ -31,6 +31,40 @@ const Navigation = () => {
         >
           Effizen
         </Typography>
+
+        {/* links */}
+        <div className="hidden lg:flex gap-4">
+          <Button
+            variant="text"
+            color="blue-gray"
+            ref="#features"
+            placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
+          >
+            Features
+          </Button>
+          <Button
+            variant="text"
+            color="blue-gray"
+            ref="#signup"
+            placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
+          >
+            Sign Up
+          </Button>
+          <Button
+            variant="text"
+            color="blue-gray"
+            ref="#login"
+            placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
+          >
+            Log In
+          </Button>
+        </div>
       </div>
     </Navbar>
   );
