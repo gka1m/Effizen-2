@@ -8,7 +8,7 @@ const Landing: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Effizen | Home</title>
+        <title>Effizen | Welcome</title>
       </Helmet>
       <div className="background-radial h-screen">
         <Navigator />
@@ -20,8 +20,21 @@ const Landing: React.FC = () => {
           </p>
           <br />
           <p className="text-lg text-red-300">
-            With task tracking, alarms and more
+            Check out the{" "}
+            <a href="/features" className="underline">
+              features
+            </a>
           </p>
+          <br />
+          <p>
+            or{" "}
+            <a href="/login" className="underline">
+              try it for yourself
+            </a>
+          </p>
+          <a href="/home" className="underline">
+            click here
+          </a>
         </div>
       </div>
     </>
