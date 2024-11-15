@@ -33,7 +33,7 @@ const Landing: React.FC = () => {
             </a>
           </p>
           <a href="/home" className="underline">
-            click here
+            test
           </a>
         </div>
       </div>
