@@ -1,7 +1,13 @@
 import React, { ChangeEvent, useState } from "react";
-import { Button, Input } from "@material-tailwind/react";
-import "./App.css";
-import "./index.css";
+import {
+  Input,
+  Card,
+  Typography,
+  CardHeader,
+  CardBody,
+  IconButton,
+} from "@material-tailwind/react";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 interface Task {
   id: number;
@@ -61,7 +67,64 @@ const Tasklist: React.FC = () => {
     setInput(e.target.value);
   }
 
-  return <div>Tasklist</div>;
+  return (
+    <Card
+      className="w-full max-w-md mx-auto shadow-lg rounded-lg"
+      placeholder={undefined}
+      onPointerEnterCapture={undefined}
+      onPointerLeaveCapture={undefined}
+    >
+      <CardHeader
+        placeholder={undefined}
+        onPointerEnterCapture={undefined}
+        onPointerLeaveCapture={undefined}
+        color="cyan"
+        className="p-4"
+      >
+        <Typography
+          placeholder={undefined}
+          onPointerEnterCapture={undefined}
+          onPointerLeaveCapture={undefined}
+          variant="h5"
+          color="black"
+        >
+          Outstanding Tasks
+        </Typography>
+      </CardHeader>
+      <CardBody
+        placeholder={undefined}
+        onPointerEnterCapture={undefined}
+        onPointerLeaveCapture={undefined}
+      >
+        <div className="flex gap-2 mb-4">
+          <Input
+            type="text"
+            placeholder="Task"
+            value={input}
+            onChange={handleChange}
+            onKeyDown={handleAdd}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
+            crossOrigin={undefined}
+          />
+          <IconButton
+            className="rounded"
+            placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
+            onClick={addTask}
+          >
+            <i className="fab fa-plus text-lg" />
+          </IconButton>
+        </div>
+        {/* <ul className="space-y-2">
+          {tasks.map((task) => (
+            <li key={task.id} className="flex items-center"
+          ))}
+        </ul> */}
+      </CardBody>
+    </Card>
+  );
 };
 
 export default Tasklist;
