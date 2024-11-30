@@ -13,6 +13,7 @@ interface Task {
   id: number;
   text: string;
   isEditing: boolean;
+  originalText?: string;
 }
 
 const Tasklist: React.FC = () => {
@@ -44,7 +45,7 @@ const Tasklist: React.FC = () => {
   function editTask(id: number, newContent: string) {
     setTasks(
       tasks.map((task) =>
-        task.id === id ? { ...task, content: newContent } : task
+        task.id === id ? { ...task, text: newContent } : task
       )
     );
   }
@@ -52,13 +53,32 @@ const Tasklist: React.FC = () => {
   function handleEdit(e: React.KeyboardEvent<HTMLInputElement>, id: number) {
     if (e.key === "Enter") {
       toggleEdit(id);
+    } else if (e.key === "Escape") {
+      setTasks(
+        tasks.map((task) =>
+          task.id === id
+            ? {
+                ...task,
+                text: task.originalText || task.text,
+                isEditing: false,
+                originalText: undefined,
+              }
+            : task
+        )
+      );
     }
   }
 
   function toggleEdit(id: number) {
     setTasks(
       tasks.map((task) =>
-        task.id === id ? { ...task, isEditing: !task.isEditing } : task
+        task.id === id
+          ? {
+              ...task,
+              isEditing: !task.isEditing,
+              originalText: task.isEditing ? undefined : task.text,
+            }
+          : task
       )
     );
   }
@@ -74,28 +94,21 @@ const Tasklist: React.FC = () => {
       onPointerEnterCapture={undefined}
       onPointerLeaveCapture={undefined}
     >
-      <CardHeader
-        placeholder={undefined}
-        onPointerEnterCapture={undefined}
-        onPointerLeaveCapture={undefined}
-        color="cyan"
-        className="p-4"
-      >
-        <Typography
-          placeholder={undefined}
-          onPointerEnterCapture={undefined}
-          onPointerLeaveCapture={undefined}
-          variant="h5"
-          color="black"
-        >
-          Outstanding Tasks
-        </Typography>
-      </CardHeader>
       <CardBody
         placeholder={undefined}
         onPointerEnterCapture={undefined}
         onPointerLeaveCapture={undefined}
       >
+        <Typography
+          variant="h5"
+          color="blue-gray"
+          className="mb-2"
+          placeholder={undefined}
+          onPointerEnterCapture={undefined}
+          onPointerLeaveCapture={undefined}
+        >
+          Outstanding Tasks
+        </Typography>
         <div className="flex gap-2 mb-4">
           <Input
             type="text"
@@ -117,11 +130,44 @@ const Tasklist: React.FC = () => {
             <i className="fab fa-plus text-lg" />
           </IconButton>
         </div>
-        {/* <ul className="space-y-2">
+        <ul className="space-y-2">
           {tasks.map((task) => (
-            <li key={task.id} className="flex items-center"
+            <li
+              key={task.id}
+              className="flex items-center justify-between p-2 bg-gray-100 rounded-lg"
+            >
+              {task.isEditing ? (
+                <Input
+                  type="text"
+                  value={task.text}
+                  autoFocus
+                  onChange={(e) => editTask(task.id, e.target.value)}
+                  onKeyDown={(e) => handleEdit(e, task.id)}
+                  onBlur={() => toggleEdit(task.id)}
+                  onPointerEnterCapture={undefined}
+                  onPointerLeaveCapture={undefined}
+                  crossOrigin={undefined}
+                />
+              ) : (
+                <span
+                  className="flex-1 cursor-pointer"
+                  onClick={() => toggleEdit(task.id)}
+                >
+                  {task.text}
+                </span>
+              )}
+              <IconButton
+                onClick={() => deleteTask(task.id)}
+                className="ml-2"
+                placeholder={undefined}
+                onPointerEnterCapture={undefined}
+                onPointerLeaveCapture={undefined}
+              >
+                <i className="fas fa-trash text-red-500" />
+              </IconButton>
+            </li>
           ))}
-        </ul> */}
+        </ul>
       </CardBody>
     </Card>
   );

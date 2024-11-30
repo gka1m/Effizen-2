@@ -10,7 +10,7 @@ const Landing: React.FC = () => {
       <Helmet>
         <title>Effizen | Welcome</title>
       </Helmet>
-      <div className="background-radial h-screen">
+      <div className="background-radial h-screen w-screen">
         <Navigator />
         <br />
         <br />
