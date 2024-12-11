@@ -34,11 +34,39 @@
 }
 
 .background-radial {
-  background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1 )100%);
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
   height: 100%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: repeat;
   background-size: cover;
+}
+
+.home-bg {
+  background-color: #ffffff;
+  background: radial-gradient(
+      circle,
+      transparent 20%,
+      #ffffff 20%,
+      #ffffff 80%,
+      transparent 80%,
+      transparent
+    ),
+    radial-gradient(
+        circle,
+        transparent 20%,
+        #ffffff 20%,
+        #ffffff 80%,
+        transparent 80%,
+        transparent
+      )
+      10px 10px,
+    linear-gradient(#a8a8a8 0.8px, transparent 0.8px) 0 -0.4px,
+    linear-gradient(90deg, #a8a8a8 0.8px, #ffffff 0.8px) -0.4px 0;
+  background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
 }

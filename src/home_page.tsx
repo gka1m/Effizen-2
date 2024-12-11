@@ -12,14 +12,14 @@ const Home = () => {
       <Helmet>
         <title>Home</title>
       </Helmet>
-      <div className="background-radial h-screen w-screen">
+      <div className="home-bg h-screen w-screen">
         {/* Welcome Back Section */}
         <section className="mb-8 py-3">
           <h1 className="text-3xl font-bold text-gray-800 text-left">
             Welcome back, {userName}!
           </h1>
           <p className="text-gray-600 text-left">
-            Here's your productivity outlook today:
+            Here's your productivity outlook for today:
           </p>
         </section>
 
