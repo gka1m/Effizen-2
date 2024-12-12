@@ -70,3 +70,8 @@
     linear-gradient(90deg, #a8a8a8 0.8px, #ffffff 0.8px) -0.4px 0;
   background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
 }
+
+.card {
+  border: 2px solid #000000;
+  border-radius: 8px;
+}
