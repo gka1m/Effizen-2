@@ -2,8 +2,8 @@ import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
-const Landing = lazy(() => import("./landing_page"));
-const Home = lazy(() => import("./home_page"));
+const Landing = lazy(() => import("./pages/landing_page"));
+const Home = lazy(() => import("./pages/home_page"));
 
 const Routing: React.FC = () => {
   return (

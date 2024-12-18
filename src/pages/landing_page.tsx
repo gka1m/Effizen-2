@@ -1,8 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import "./App.css";
-import "./index.css";
-import Navigator from "./components/Navigation";
+import "../App.css";
+import "../index.css";
+import Navigator from "../components/Navigation";
 
 const Landing: React.FC = () => {
   return (

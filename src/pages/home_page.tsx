@@ -1,9 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import Sidebar from "./components/Sidebar";
-import "./App.css";
-import "./index.css";
-import Tasklist from "./components/Tasklist";
+import Sidebar from "../components/Sidebar";
+import "../App.css";
+import "../index.css";
+import Tasklist from "../components/Tasklist";
 
 const Home = () => {
   const userName = "John Doe"; // Replace with dynamic data from backend
