@@ -4,6 +4,7 @@ import { HelmetProvider } from "react-helmet-async";
 
 const Landing = lazy(() => import("./pages/landing_page"));
 const Home = lazy(() => import("./pages/home_page"));
+const Timepage = lazy(() => import("./pages/timer_page"));
 
 const Routing: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const Routing: React.FC = () => {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/timer" element={<Timepage />} />
           </Routes>
         </Suspense>
       </HelmetProvider>

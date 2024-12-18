@@ -5,8 +5,6 @@ import {
   List,
   ListItem,
   ListItemPrefix,
-  ListItemSuffix,
-  Chip,
 } from "@material-tailwind/react";
 import {
   UserCircleIcon,
@@ -14,6 +12,7 @@ import {
   InboxIcon,
   PowerIcon,
   ClockIcon,
+  ClipboardDocumentCheckIcon,
 } from "@heroicons/react/24/solid";
 
 const Sidebar: React.FC = () => {
@@ -50,22 +49,9 @@ const Sidebar: React.FC = () => {
             onPointerEnterCapture={undefined}
             onPointerLeaveCapture={undefined}
           >
-            <InboxIcon className="h-5 w-5" />
+            <ClipboardDocumentCheckIcon className="h-5 w-5" />
           </ListItemPrefix>
-          Inbox
-          <ListItemSuffix
-            placeholder={undefined}
-            onPointerEnterCapture={undefined}
-            onPointerLeaveCapture={undefined}
-          >
-            <Chip
-              value="5"
-              size="sm"
-              variant="ghost"
-              color="blue-gray"
-              className="rounded-full"
-            />
-          </ListItemSuffix>
+          <a href="/home">Home</a>
         </ListItem>
         <ListItem
           placeholder={undefined}
@@ -79,7 +65,7 @@ const Sidebar: React.FC = () => {
           >
             <ClockIcon className="h-5 w-5" />
           </ListItemPrefix>
-          Pomodoro
+          <a href="/timer">Pomodoro</a>
         </ListItem>
         <ListItem
           placeholder={undefined}
