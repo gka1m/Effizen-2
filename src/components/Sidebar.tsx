@@ -9,7 +9,6 @@ import {
 import {
   UserCircleIcon,
   Cog6ToothIcon,
-  InboxIcon,
   PowerIcon,
   ClockIcon,
   ClipboardDocumentCheckIcon,
@@ -39,34 +38,38 @@ const Sidebar: React.FC = () => {
         onPointerEnterCapture={undefined}
         onPointerLeaveCapture={undefined}
       >
-        <ListItem
-          placeholder={undefined}
-          onPointerEnterCapture={undefined}
-          onPointerLeaveCapture={undefined}
-        >
-          <ListItemPrefix
+        <a href="/home">
+          <ListItem
             placeholder={undefined}
             onPointerEnterCapture={undefined}
             onPointerLeaveCapture={undefined}
           >
-            <ClipboardDocumentCheckIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          <a href="/home">Home</a>
-        </ListItem>
-        <ListItem
-          placeholder={undefined}
-          onPointerEnterCapture={undefined}
-          onPointerLeaveCapture={undefined}
-        >
-          <ListItemPrefix
+            <ListItemPrefix
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+            >
+              <ClipboardDocumentCheckIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Home
+          </ListItem>
+        </a>
+        <a href="/timer">
+          <ListItem
             placeholder={undefined}
             onPointerEnterCapture={undefined}
             onPointerLeaveCapture={undefined}
           >
-            <ClockIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          <a href="/timer">Pomodoro</a>
-        </ListItem>
+            <ListItemPrefix
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+            >
+              <ClockIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Pomodoro
+          </ListItem>
+        </a>
         <ListItem
           placeholder={undefined}
           onPointerEnterCapture={undefined}

@@ -5,6 +5,7 @@ import {
   PlayIcon,
   PauseIcon,
   Cog8ToothIcon,
+  ArrowUturnLeftIcon,
 } from "@heroicons/react/24/outline";
 
 interface Settings {
@@ -41,10 +42,10 @@ const Timer: React.FC = () => {
 
   function togglePhase() {
     setWorkPhase((prev) => !prev);
-    setTimeLeft((prev) =>
+    setTimeLeft(() =>
       workPhase ? settings.restDuration * 60 : settings.workDuration * 60
     );
-    setIsRunning(false);
+    setIsRunning(true);
   }
 
   function formatTime(seconds: number) {
@@ -54,6 +55,14 @@ const Timer: React.FC = () => {
       .toString()
       .padStart(2, "0")}`;
   }
+
+  function resetTimer() {
+    setTimeLeft(
+      workPhase ? settings.workDuration * 60 : settings.restDuration * 60
+    );
+    setIsRunning(false);
+  }
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <h1 className="text-4xl font-bold mb-6 text-gray-800">Pomodoro Timer</h1>
@@ -110,10 +119,16 @@ const Timer: React.FC = () => {
           <Cog8ToothIcon className="w-6 h-6" />
         </button>
         <button
+          onClick={resetTimer}
+          className="px-4 py-2 text-white bg-yellow-600 rounded hover:bg-yellow-700"
+        >
+          <ArrowUturnLeftIcon className="h-5 w-5" />
+        </button>
+        <button
           onClick={togglePhase}
           className="px-4 py-2 text-white bg-green-600 rounded hover:bg-green-700"
         >
-          {workPhase ? "Skip to Rest" : "Skip to Work"}
+          {workPhase ? "Rest/Work" : "Rest/Work"}
         </button>
       </div>
 
