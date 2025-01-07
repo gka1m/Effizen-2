@@ -20,7 +20,7 @@ const Home = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 home-bg overflow-y-auto">
+        <div className="flex-1 background-radial overflow-y-auto">
           {/* Welcome Back Section */}
           <section className="mb-8 p-3">
             <h1 className="text-3xl font-bold text-gray-800 text-left">
