@@ -17,7 +17,7 @@ import {
 const Sidebar: React.FC = () => {
   return (
     <Card
-      className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5"
+      className="h-full max-w-[20rem] p-4 background-radial"
       placeholder={undefined}
       onPointerEnterCapture={undefined}
       onPointerLeaveCapture={undefined}
@@ -70,48 +70,55 @@ const Sidebar: React.FC = () => {
             Pomodoro
           </ListItem>
         </a>
-        <ListItem
-          placeholder={undefined}
-          onPointerEnterCapture={undefined}
-          onPointerLeaveCapture={undefined}
-        >
-          <ListItemPrefix
+        <a href="/pending">
+          <ListItem
             placeholder={undefined}
             onPointerEnterCapture={undefined}
             onPointerLeaveCapture={undefined}
           >
-            <UserCircleIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Profile
-        </ListItem>
-        <ListItem
-          placeholder={undefined}
-          onPointerEnterCapture={undefined}
-          onPointerLeaveCapture={undefined}
-        >
-          <ListItemPrefix
+            <ListItemPrefix
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+            >
+              <UserCircleIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Profile
+          </ListItem>
+        </a>
+        <a href="/pending">
+          <ListItem
             placeholder={undefined}
             onPointerEnterCapture={undefined}
             onPointerLeaveCapture={undefined}
           >
-            <Cog6ToothIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Settings
-        </ListItem>
-        <ListItem
-          placeholder={undefined}
-          onPointerEnterCapture={undefined}
-          onPointerLeaveCapture={undefined}
-        >
-          <ListItemPrefix
+            <ListItemPrefix
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+            >
+              <Cog6ToothIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Settings
+          </ListItem>
+        </a>
+
+        <a href="/">
+          <ListItem
             placeholder={undefined}
             onPointerEnterCapture={undefined}
             onPointerLeaveCapture={undefined}
           >
-            <PowerIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Log Out
-        </ListItem>
+            <ListItemPrefix
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+            >
+              <PowerIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Log Out
+          </ListItem>
+        </a>
       </List>
     </Card>
   );

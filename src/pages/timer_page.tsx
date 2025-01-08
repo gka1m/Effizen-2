@@ -12,10 +12,10 @@ const Timepage: React.FC = () => {
         <title>Timer</title>
       </Helmet>
       <div className="flex h-screen w-screen">
-        <div className="w-64 home-bg">
+        <div className="w-64 background-radial">
           <Sidebar />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 background-radial">
           <Timer />
         </div>
       </div>

@@ -64,7 +64,7 @@ const Timer: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-4xl font-bold mb-6 text-gray-800">Pomodoro Timer</h1>
 
       {/* Timer Display */}

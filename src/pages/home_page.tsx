@@ -1,21 +1,20 @@
+import React from "react";
 import { Helmet } from "react-helmet-async";
 import Sidebar from "../components/Sidebar";
 import "../App.css";
 import "../index.css";
 import Tasklist from "../components/Tasklist";
 
-const Home = () => {
-  const userName = "John Doe"; // Replace with dynamic data from backend
-
+const Home: React.FC = () => {
   return (
     <>
       <Helmet>
         <title>Home</title>
       </Helmet>
       {/* Parent Flex Container */}
-      <div className="flex h-screen w-screen">
+      <div className="flex h-screen w-screen background-radial">
         {/* Sidebar */}
-        <div className="w-64 bg-gray-100 shadow-md">
+        <div className="w-64 shadow-md">
           <Sidebar />
         </div>
 
@@ -24,7 +23,7 @@ const Home = () => {
           {/* Welcome Back Section */}
           <section className="mb-8 p-3">
             <h1 className="text-3xl font-bold text-gray-800 text-left">
-              Welcome back, {userName}!
+              Welcome back!
             </h1>
             <p className="text-gray-600 text-left">
               Here's your productivity outlook for today:
