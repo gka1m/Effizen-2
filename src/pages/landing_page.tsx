@@ -10,7 +10,7 @@ const Landing: React.FC = () => {
       <Helmet>
         <title>Effizen | Welcome</title>
       </Helmet>
-      <div className="background-radial w-screen">
+      <div className="background-radial w-screen h-screen">
         <div className="container p-24 mx-auto w-full">
           <p className="text-6xl text-blue-500 text-center font-sans italic antialiased">
             Effizen: Task Organization Meets Pomodoro Focus
