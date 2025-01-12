@@ -24,10 +24,19 @@ I used React, Typescript and Vite to write the source code that I have submitted
 
 I used Vite, which is a modern build tool focusing on speed and performance. I chose this as compared to other tools like Webpack as it has features like hot module replacement, allowing developers to see changes instantly on the preview instead of refreshing the whole page, as well as native ES module support. In the context of this project, using Vite offers faster builds and a smoother experience developing this project.
 
-I used Tailwind CSS in the development process, as this would allow me to save time on writing CSS code, when I can use predefined classes in the HTML code itself instead of toggling between the CSS code and the tsx files. I only reverted to writing vanilla CSS code when the effect I wanted to apply was very specific, e.g. a radial background.
+I used Tailwind CSS in the development process, as this would allow me to save time on writing CSS code by using predefined classes in the HTML code. I only reverted to writing vanilla CSS code when the effect I wanted to apply was very specific, e.g. a radial background.
 
-<!--
-Project Features:
+The project folder itself contains my source code broken up into several folders: the components itself, as well as the pages: As this was intended to be a fullstack project, I styled it like it was a web application, with a landing page that has since been modified to fit a frontend project style, the home page, as well as a page to house the pomodoro timer.
+
+---
+
+### Getting Started on the Project
+
+1. Setting up the Environment
+
+- <!--
+  Project Features:
+
 
 - Task management with options to delete and edit tasks
 - Pomodoro timer
